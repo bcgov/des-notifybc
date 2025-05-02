@@ -3,14 +3,6 @@ on:
   release:
     types:
       - published
-  pull_request:
-    paths:
-      - 'src/**'
-      - 'client/**'
-      - 'server/**'
-      - 'test/**'
-      - 'package-lock.json'
-      - 'Dockerfile'
   workflow_dispatch:
 jobs:
   install-build-lint-and-test:
@@ -45,7 +37,6 @@ jobs:
           images: |
             ghcr.io/bcgov/des-notify-bc
           tags: |
-            type=ref,event=pr
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}}

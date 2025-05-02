@@ -1,8 +1,8 @@
 environment: prod
 
 image:
-  repository: ghcr.io/bcgov/des-notify-bc
-  pullPolicy: Always
+  repository: des-notifybc
+  pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: 'latest'
 fluentbit:

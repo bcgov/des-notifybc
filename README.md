@@ -6,12 +6,13 @@
 
 A versatile notification API server. See **[full documentation](https://bcgov.github.io/NotifyBC/)**.
 
-## Docker Desktop Kubernetes deployment
-To build and run in Kubernetes via Docker Desktop:
-Note: Kubernetes must be enabled in Docker Desktop.
+## Rancher Desktop Kubernetes deployment
+To build and run in Kubernetes via Rancher Desktop:
+Note: Kubernetes must be enabled in Rancher Desktop.
 ```sh
-kubectl config use-context docker-desktop
-helm install dev helm -f helm/values.yaml -f helm/values.local.yaml
+kubectl config use-context rancher-desktop
+docker build . -t des-notifybc
+helm install des-notifybcdev helm -f helm/values.yaml -f helm/values.local.yaml
 ```
 
 ## Accessing Logs with the Sidecar Container
