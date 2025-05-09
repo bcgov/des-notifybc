@@ -70,8 +70,18 @@ export class BaseService<T> {
       updateDto.updatedBy = req.user;
     }
     updateDto.updated = new Date();
+
+    // Validate and sanitize updateDto
+    const allowedFields = ['field1', 'field2', 'updatedBy', 'updated']; // Replace with actual allowed fields
+    const sanitizedUpdateDto = Object.keys(updateDto)
+      .filter(key => allowedFields.includes(key))
+      .reduce((obj, key) => {
+        obj[key] = updateDto[key];
+        return obj;
+      }, {});
+
     const res = await this.model
-      .updateMany(this.model.translateAliases(filter), updateDto)
+      .updateMany(this.model.translateAliases(filter), { $set: sanitizedUpdateDto })
       .exec();
     return { count: res.modifiedCount };
   }
