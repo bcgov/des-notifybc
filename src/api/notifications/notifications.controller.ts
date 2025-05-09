@@ -738,6 +738,15 @@ export class NotificationsController extends BaseController {
                 this.req.protocol + '://' + this.req.get('host');
             }
 
+            // Validate httpHost against an allow-list of trusted hosts
+            const trustedHosts = this.appConfig.trustedHosts || [];
+            if (!trustedHosts.some((trustedHost) => httpHost.startsWith(trustedHost))) {
+              throw new HttpException(
+                'Invalid host specified',
+                HttpStatus.BAD_REQUEST,
+              );
+            }
+
             const q = queue(async (task: { startIdx: string }) => {
               const uri =
                 httpHost +
