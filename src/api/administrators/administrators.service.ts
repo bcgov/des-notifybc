@@ -33,9 +33,12 @@ export class AdministratorsService extends BaseService<Administrator> {
   async verifyCredentials(credentials: LoginDto): Promise<Administrator> {
     const invalidCredentialsError = 'Invalid email or password.';
 
+    if (typeof credentials.email !== 'string') {
+      throw new HttpException(invalidCredentialsError, HttpStatus.UNAUTHORIZED);
+    }
     const foundUser = await this.model
       .findOne({
-        email: credentials.email,
+        email: { $eq: credentials.email },
       })
       .populate('userCredential')
       .exec();
