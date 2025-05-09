@@ -1,4 +1,6 @@
 name: buildTestPublishContainerDeploy
+permissions:
+  contents: read
 on:
   release:
     types:
@@ -33,6 +35,9 @@ jobs:
     if: ${{ github.repository == 'bcgov/des-notifybc' && github.actor != 'renovate[bot]' }}
     needs: install-build-lint-and-test
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4.2.2
@@ -67,6 +72,9 @@ jobs:
     if: ${{ github.repository == 'bcgov/des-notifybc' && github.event_name == 'push' }}
     needs: publish-container
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4.2.2
