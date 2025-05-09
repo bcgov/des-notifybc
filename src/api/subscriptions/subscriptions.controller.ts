@@ -43,7 +43,7 @@ import {
 } from '@nestjs/swagger';
 import crypto from 'crypto';
 import { Request, Response } from 'express';
-import { merge } from 'lodash';
+import { merge, escapeRegExp } from 'lodash';
 import { AnyObject, FilterQuery } from 'mongoose';
 import RandExp from 'randexp';
 import { Role } from 'src/auth/constants';
@@ -153,7 +153,8 @@ export class SubscriptionsController extends BaseController {
       if (!body.PhoneNumber) {
         throw new HttpException(undefined, HttpStatus.FORBIDDEN);
       }
-      const phoneNumberArr = body.PhoneNumber.split('');
+      const sanitizedPhoneNumber = _.escapeRegExp(body.PhoneNumber);
+      const phoneNumberArr = sanitizedPhoneNumber.split('');
       // country code is optional
       if (phoneNumberArr[0] === '1') {
         phoneNumberArr[0] = '1?';
