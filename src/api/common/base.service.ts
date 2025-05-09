@@ -95,7 +95,14 @@ export class BaseService<T> {
     }
     updateDto.updated = new Date();
     delete updateDto.id;
-    return this.model.findByIdAndUpdate(id, updateDto, options).exec();
+    
+    // Validate updateDto to ensure it is a plain object
+    if (typeof updateDto !== 'object' || Array.isArray(updateDto)) {
+      throw new Error('Invalid update data');
+    }
+    
+    // Use $set operator to safely update fields
+    return this.model.findByIdAndUpdate(id, { $set: updateDto }, options).exec();
   }
 
   replaceById(
