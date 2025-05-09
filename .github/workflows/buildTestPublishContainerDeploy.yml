@@ -1,4 +1,8 @@
 name: buildTestPublishContainerDeploy
+permissions:
+  contents: read
+  packages: write
+  deployments: write
 on:
   release:
     types:
