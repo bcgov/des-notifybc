@@ -35,9 +35,9 @@ export class AccessTokenService extends BaseService<AccessToken> {
   }
 
   async verifyToken(token: string): Promise<AdminUserProfile> {
-    if (!token) {
+    if (!token || typeof token !== 'string' || !/^[a-zA-Z0-9]{64}$/.test(token)) {
       throw new HttpException(
-        `Error verifying token : 'token' is null`,
+        `Error verifying token : 'token' is invalid`,
         HttpStatus.UNAUTHORIZED,
       );
     }
