@@ -43,7 +43,7 @@ import {
 } from '@nestjs/swagger';
 import crypto from 'crypto';
 import { Request, Response } from 'express';
-import { merge } from 'lodash';
+import { merge, escapeRegExp as _escapeRegExp } from 'lodash';
 import { AnyObject, FilterQuery } from 'mongoose';
 import RandExp from 'randexp';
 import { Role } from 'src/auth/constants';
@@ -989,9 +989,10 @@ export class SubscriptionsController extends BaseController {
       !data.confirmationRequest.confirmationCode &&
       data.confirmationRequest.confirmationCodeRegex
     ) {
-      const confirmationCodeRegex = new RegExp(
+      const safeRegex = _.escapeRegExp(
         data.confirmationRequest.confirmationCodeRegex,
       );
+      const confirmationCodeRegex = new RegExp(safeRegex);
       data.confirmationRequest.confirmationCode = new RandExp(
         confirmationCodeRegex,
       ).gen();
