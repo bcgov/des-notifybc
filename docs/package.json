@@ -7,6 +7,9 @@
     "name": "Fred Wen",
     "email": "fred.wen@gov.bc.ca"
   },
+  "engines": {
+    "node": ">=20.12.2 <21"
+  },
   "repository": "https://github.com/bcgov/NotifyBC",
   "scripts": {
     "dev": "vuepress dev",
@@ -17,6 +20,6 @@
     "@snippetors/vuepress-plugin-code-copy": "^1.2.3",
     "@vuepress/plugin-docsearch": "2.0.0-rc.0",
     "markdown-it-include": "^2.0.0",
-    "vuepress": "2.0.0-rc.23"
+    "vuepress": "2.0.0-rc.24"
   }
 }
