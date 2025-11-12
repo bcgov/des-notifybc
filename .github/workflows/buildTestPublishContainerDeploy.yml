@@ -29,6 +29,8 @@ jobs:
           npm run build
           npm run lint
           npm run test:e2e
+          cd client
+          npm run build:dev
   publish-container:
     if: ${{ github.repository == 'bcgov/des-notifybc' && github.actor != 'renovate[bot]' }}
     needs: install-build-lint-and-test
