@@ -8,7 +8,7 @@
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
   "engines": {
-    "node": ">=20.12.2 <21"
+    "node": ">=22.21.1 <23"
   },
   "repository": {
     "type": "git",
