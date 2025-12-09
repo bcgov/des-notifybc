@@ -8,7 +8,7 @@
     "email": "fred.wen@gov.bc.ca"
   },
   "engines": {
-    "node": ">=22.21.1 <23"
+    "node": "^24.11.1"
   },
   "repository": "https://github.com/bcgov/NotifyBC",
   "scripts": {
