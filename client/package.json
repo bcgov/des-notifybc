@@ -12,6 +12,7 @@
     "@fortawesome/fontawesome-free": "^v5.15.4",
     "core-js": "^3.29.0",
     "iframe-resizer": "^4.3.1",
+    "minimatch": "9.0.5",
     "webfontloader": "^1.0.0"
   },
   "devDependencies": {
@@ -19,7 +20,7 @@
     "@vitejs/plugin-vue": "^4.6.2",
     "bootstrap": "~5.0.0",
     "ejs": "^3.1.9",
-    "eslint": "^8.37.0",
+    "eslint": "^8.57.1",
     "eslint-plugin-vue": "^9.3.0",
     "fast-glob": "^3.3.0",
     "jodit": "^4.0.0-beta.61",
