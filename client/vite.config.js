@@ -18,6 +18,7 @@ export default async ({ mode }) => {
   const proxyProto = appConfig.tls.enabled ? 'https' : 'http';
 
   let config = {
+    productionSourceMap: true,
     plugins: [
       vue({
         template: { transformAssetUrls },
