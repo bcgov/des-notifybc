@@ -23,7 +23,7 @@
     "eslint-plugin-vue": "^9.3.0",
     "fast-glob": "^3.3.0",
     "jodit": "^4.0.0-beta.61",
-    "jquery": "^3.7.1",
+    "jquery": "^3.5.0",
     "jquery-ui-bundle": "^1.12.1",
     "less": "^4.1.1",
     "lodash": "^4.17.21",
