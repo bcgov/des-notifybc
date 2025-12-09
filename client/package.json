@@ -9,7 +9,7 @@
     "lint": "eslint . --fix --ignore-path .gitignore"
   },
   "engines": {
-    "node": "^24.11.1"
+    "node": ">=20.12.2 <21"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
