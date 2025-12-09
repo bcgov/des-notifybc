@@ -6,9 +6,9 @@
 
 // Styles
 import '@fortawesome/fontawesome-free/css/all.css';
+import { VDataTableServer } from 'vuetify/components';
 import { fa } from 'vuetify/iconsets/fa';
 import { aliases, md } from 'vuetify/iconsets/md';
-import { VDataTableServer } from 'vuetify/labs/VDataTable';
 import 'vuetify/styles';
 
 // Composables

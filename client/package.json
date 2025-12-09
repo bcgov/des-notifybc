@@ -29,12 +29,12 @@
     "lodash": "^4.17.21",
     "oidc-client-ts": "^3.0.0",
     "pinia": "^2.1.4",
-    "vite": "^4.5.3",
+    "vite": "^5.4.11",
     "vite-multiple-assets": "^1.2.3",
-    "vite-plugin-vuetify": "^1.0.0",
+    "vite-plugin-vuetify": "^2.0.4",
     "vue": "^3.2.0",
     "vue-router": "^4.0.0",
-    "vuetify": "~3.3.0"
+    "vuetify": "^3.7.5"
   },
   "eslintConfig": {
     "root": true,
