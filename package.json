@@ -48,7 +48,7 @@
     "bcryptjs": "^2.4.3",
     "bottleneck": "^2.19.5",
     "class-transformer": "^0.5.1",
-    "class-validator": "^0.14.3",
+    "class-validator": "^0.15.0",
     "compression": "^1.8.1",
     "cron": "^3.5.0",
     "crypto-random-string": "^3.3.1",
@@ -101,7 +101,7 @@
     "typescript": "^5.1.3"
   },
   "optionalDependencies": {
-    "redis-memory-server": "^0.14.0"
+    "redis-memory-server": "^0.17.0"
   },
   "jest": {
     "moduleFileExtensions": [
